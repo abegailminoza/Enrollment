@@ -1,5 +1,5 @@
 <template>
-  <Userlogin />
+  <Home />
 </template>
 
 <script>
@@ -8,4 +8,3 @@ name: "IndexPage",
 layout: 'empty'
 }
 </script>
-
