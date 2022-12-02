@@ -1,7 +1,7 @@
 <template>
-    <body>
+    <body style="background: url('/ctubuilding.jpg'); height: 100vh; background-size: cover; background-repeat: no-repeat;">
     <div>
-      <b-button v-b-toggle.sidebar-no-header style="margin-left: 2vw;">Dashboard</b-button>
+      <b-button v-b-toggle.sidebar-no-header style="margin-left: 2vw; margin-bottom: 2vw; margin-top: 1vw;">|||</b-button>
       <b-sidebar id="sidebar-no-header" aria-labelledby="sidebar-no-header-title" no-header shadow>
         <template #default="{ hide }">
           <div class="p-3">
@@ -18,15 +18,8 @@
           </div>
         </template>
       </b-sidebar>
+
+
     </div>
     </body>
   </template>
-
-  <style>
-body{
-    background-color: white;
-}
-
-
-
-</style>
