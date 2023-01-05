@@ -18,8 +18,6 @@
           </div>
         </template>
       </b-sidebar>
-
-
     </div>
     </body>
   </template>

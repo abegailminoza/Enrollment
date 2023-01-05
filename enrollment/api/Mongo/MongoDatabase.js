@@ -1,34 +1,28 @@
-const Router = require('koa-router');
-const student = require('./MongoConnect').db('Database').collection('Users'); // Change or Not the Database and Collection Name
+//Data From Mongo
+const user = require('./MongoConnect.js').db('Database').collection('Users');
 
-const router = new Router({
-    prefix: '/cloud_student_data'
-});
 
-//Get All Documens from Account Collection
-const GetAllStudent = async () => {
-    const cursor = await student.find();
+const GetUsers = async () => {
+    const cursor = await user.find();
     return cursor.toArray();
 };
 
-//Insert New Document
-const InsertStudent =  async (id, name, course, year, section) => {
-    return await student.insertOne({id: id, name: name, course: course, year: year, section: section, edit: false});
+//Insert new document
+const insertAccount = async(id, name, lastname) => {
+    return await user.insertOne({id: parseInt(id), name: name, lastname: lastname, edit: false});
 };
 
 //Update Document
-const UpdateStudent = async (id, name, course, year, section) => {
-    return await student.updateOne({id: parseInt(id)}, {$set: {
+const updateAccount = async(id, name, lastname) =>{
+    return await user.updateOne({id: parseInt(id)}, {$set:{
         name: name,
-        course: course,
-        year: year,
-        section: section
+        lastname: lastname
     }});
 };
 
 //Delete a Document
-const DeleteStudent =  async (id) => {
-    return await student.deleteOne({id: parseInt(id)});
+const deleteAccount = async (id) => {
+    return await user.deleteOne({id: parseInt(id)});
 };
 
-module.exports = {GetAllStudent, InsertStudent, UpdateStudent, DeleteStudent};
+module.exports = {GetUsers, insertAccount, updateAccount, deleteAccount};
