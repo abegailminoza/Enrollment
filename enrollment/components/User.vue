@@ -47,8 +47,10 @@
             <input v-if="item.edit" v-model="item.lastname" type="text">
             <span v-else>{{item.lastname}} </span>
           </td>
-          <td><button class="btn btn-info" @click="ItemEdit(item)"><i class="far fa-edit">edit</i></button>
-            <button class="btn btn-danger" @click="removeItem(item)"><i class="far fa-trash-alt">delete</i></button></td>
+
+
+            <td><button @click="ItemEdit(item)" class="btn btn-info"><i class="far fa-edit">edit</i></button>
+            <button @click="removeItem(item)" class="btn btn-danger"><i class="far fa-trash-alt">delete</i></button></td>
         </tr>
       </table>
   </div>
